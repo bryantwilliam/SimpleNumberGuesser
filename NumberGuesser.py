@@ -7,14 +7,14 @@ def init():
     try:
         range = input("New game!! \nWelcome! Input your range of values:\n>>> ")
         randomNumber = random.randrange(int(range[0]), int(range[2]))
-    except Exception:
+    except ValueError:
         print("You entered the wrong format. start-finish is the correct format.")
         init()
 
     while True:
         try:
             guess = int(input("Guess the number!\n>>> "))
-        except Exception:
+        except ValueError:
             print("You did not enter a number!")
             continue
 
@@ -31,7 +31,7 @@ def init():
     while True:
         if newGame == "yes":
             init()
-            break;
+            break
         elif newGame == "no": exit()
         else: newGame = input("You entered the wrong input. Type 'yes' or 'no'!\n>>>")
 
