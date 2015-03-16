@@ -5,8 +5,8 @@ import random
 
 def init():
     try:
-        range = input("New game!! \nWelcome! Input your range of values:\n>>> ")
-        randomNumber = random.randrange(int(range[0]), int(range[2]))
+        range = list(input("New game!! \nWelcome! Input your range of values:\n>>> ").split("-"))
+        randomNumber = random.randrange(int(range[0]), int(range[1]))
     except ValueError:
         print("You entered the wrong format. start-finish is the correct format.")
         init()
@@ -18,22 +18,27 @@ def init():
             print("You did not enter a number!")
             continue
 
-        if guess < int(range[0]) or guess > int(range[2]):
+        if guess < int(range[0]) or guess > int(range[1]):
             print("The range is from " + range)
             continue
         if guess == randomNumber:
             print("Correct! Your answer was ", randomNumber)
             break
-        elif guess < randomNumber: print("Higher!")
-        else: print("Lower!")
+        elif guess < randomNumber: 
+            print("Higher!")
+        else: 
+            print("Lower!")
 
     newGame = input("Nice job, would you like to play again? Enter 'yes' or 'no'\n>>>")
     while True:
         if newGame == "yes":
             init()
             break
-        elif newGame == "no": exit()
-        else: newGame = input("You entered the wrong input. Type 'yes' or 'no'!\n>>>")
+        elif newGame == "no": 
+            exit()
+        else: 
+            newGame = input("You entered the wrong input. Type 'yes' or 'no'!\n>>>")
 
 
-if __name__ == "__main__": init()
+if __name__ == "__main__": 
+    init()
