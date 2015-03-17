@@ -17,9 +17,9 @@ def init():
         except ValueError:
             print("You did not enter a number!")
             continue
-
-        if guess < int(range[0]) or guess > int(range[1]):
-            print("The range is from " + range)
+        min, max = range[0], range[1]
+        if guess < int(min) or guess > int(max):
+            print("The range is from " + min + " to " + max)
             continue
         if guess == randomNumber:
             print("Correct! Your answer was ", randomNumber)
