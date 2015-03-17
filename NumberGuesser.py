@@ -31,10 +31,10 @@ def init():
 
     newGame = input("Nice job, would you like to play again? Enter 'yes' or 'no'\n>>>")
     while True:
-        if newGame == "yes":
+        if newGame.lower() == "yes":
             init()
             break
-        elif newGame == "no": 
+        elif newGame.lower() == "no": 
             exit()
         else: 
             newGame = input("You entered the wrong input. Type 'yes' or 'no'!\n>>>")
